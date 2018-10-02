@@ -1,0 +1,49 @@
+﻿@model WebApplication.model.People.Person
+
+@{
+    ViewBag.Title = "Pessoa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Excluir Pessoa</h2>
+
+<h3>Deseja mesmo excluir essa pessoa?</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Document1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Document1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Document2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Document2)
+        </dd>
+
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-default" /> 
+            <span class="btn btn-default">@Html.ActionLink("Voltar", "Index")</span>
+        </div>
+    }
+</div>

@@ -1,0 +1,164 @@
+﻿@model WebApplication.model.People.Person
+
+@{
+    ViewBag.Title = "Pessoa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Mostrar Pessoa</h2>
+<br />
+
+<div>
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.Type)*@
+            @if (Model.Type == 0)
+            {
+                @Html.DisplayName("F")
+            }
+            else
+            {
+                @Html.DisplayName("PJ")
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SocialName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SocialName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.Gender)*@
+            @if ((Model.Type == 0) && Model.Gender == 0)
+            {
+                @Html.DisplayName("F")
+            }
+            else if((Model.Type == 0) && Model.Gender == 1)
+            {
+                @Html.DisplayName("M")
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Birthdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Birthdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Document1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Document1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Document2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Document2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Document3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Document3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address.Name), @Html.DisplayFor(model => model.Address.Number),  @Html.DisplayFor(model => model.Address.Complement),
+            @Html.DisplayFor(model => model.Address.City) -  @Html.DisplayFor(model => model.Address.State)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address.ZipCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address.ZipCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotherName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotherName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FatherName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FatherName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddUser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EditDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EditDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EditUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EditUser)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <span class="btn btn-default">@Html.ActionLink("Editar", "Edit", new { id = Model.Id })</span>
+    <span class="btn btn-default">@Html.ActionLink("Voltar", "Index")</span>
+</p>
